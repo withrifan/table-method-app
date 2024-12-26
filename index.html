@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metode Tabel</title>
+    <link rel="stylesheet" href="/web/styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <h2>Metode Tabel</h2>
+        <form id="numericalForm">
+          <label for="fungsi">Masukkan Fungsi</label>
+          <input
+            type="text"
+            id="fungsi"
+            name="fungsi"
+            placeholder="Contoh: x^3 - 4*x + 1"
+          />
+
+          <label for="batasAtas">Masukkan Batas Atas</label>
+          <input
+            type="text"
+            id="batasAtas"
+            name="batasAtas"
+            placeholder="Contoh: 3"
+          />
+
+          <label for="batasBawah">Masukkan Batas Bawah</label>
+          <input
+            type="text"
+            id="batasBawah"
+            name="batasBawah"
+            placeholder="Contoh: -3"
+          />
+
+          <label for="jumlahPembagian">Masukkan Jumlah Pembagian</label>
+          <input
+            type="text"
+            id="jumlahPembagian"
+            name="jumlahPembagian"
+            placeholder="Contoh: 10"
+          />
+
+          <button type="button" class="button reset" onclick="resetForm()">
+            Reset
+          </button>
+          <button type="button" class="button" onclick="prosesMetodeTabel()">
+            Hitung
+          </button>
+        </form>
+      </div>
+
+      <div class="sidebar">
+        <label for="prosesIterasi">Proses Iterasi</label>
+        <textarea id="prosesIterasi" name="prosesIterasi" readonly></textarea>
+
+        <label for="hasil">Hasil</label>
+        <textarea id="hasil" name="hasil" readonly></textarea>
+      </div>
+    </div>
+    <script src="/web/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+  </body>
+</html>

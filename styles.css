@@ -1,0 +1,118 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 95%;
+  max-width: 1600px; /* Memperbesar ukuran maksimal */
+  background: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 40px; /* Menambah padding */
+  box-sizing: border-box;
+}
+
+.container {
+  flex: 3; /* Memperbesar bagian input */
+  margin: 20px;
+}
+
+.sidebar {
+  flex: 2; /* Memperbesar sidebar */
+  margin: 20px;
+  background-color: #f1f3f5;
+  padding: 30px; /* Menambah padding */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 30px; /* Menambah jarak */
+  color: #343a40;
+  font-size: 28px; /* Memperbesar font heading */
+}
+
+label {
+  display: block;
+  margin-bottom: 15px; /* Menambah jarak antar label */
+  font-weight: bold;
+  color: #495057;
+  font-size: 18px; /* Memperbesar ukuran font label */
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 15px; /* Memperbesar padding */
+  margin-bottom: 25px; /* Menambah jarak antar elemen */
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 16px; /* Memperbesar ukuran font */
+  box-sizing: border-box;
+}
+
+#prosesIterasi {
+  height: 500px; /* Menambah tinggi area proses iterasi */
+  width: 700px;
+  background-color: #e9ecef;
+  font-size: 16px; /* Memperbesar ukuran font */
+  padding: 10px;
+}
+
+#hasil {
+  height: 80px; /* Menambah tinggi area hasil */
+  width: 700px;
+  background-color: #ffffff;
+  font-size: 16px; /* Memperbesar ukuran font */
+  padding: 10px;
+}
+
+textarea {
+  resize: none;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 30px; /* Memperbesar tombol */
+  font-size: 18px; /* Memperbesar ukuran font tombol */
+  color: #ffffff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  margin-right: 15px;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.button.reset {
+  background-color: #6c757d;
+}
+
+.button.reset:hover {
+  background-color: #5a6268;
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .container,
+  .sidebar {
+    margin: 10px 0;
+  }
+}
