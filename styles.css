@@ -12,89 +12,164 @@ body {
 .wrapper {
   display: flex;
   flex-wrap: wrap;
-  width: 95%;
-  max-width: 1600px; /* Memperbesar ukuran maksimal */
+  width: 90%;
+  max-width: 1400px;
   background: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  padding: 40px; /* Menambah padding */
+  padding: 30px;
   box-sizing: border-box;
 }
 
 .container {
-  flex: 3; /* Memperbesar bagian input */
-  margin: 20px;
+  flex: 2;
+  margin: 15px;
 }
 
 .sidebar {
-  flex: 2; /* Memperbesar sidebar */
-  margin: 20px;
+  flex: 1.5;
+  margin: 15px;
   background-color: #f1f3f5;
-  padding: 30px; /* Menambah padding */
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-  margin-bottom: 30px; /* Menambah jarak */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Transparansi latar belakang */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  visibility: hidden; /* Tersembunyi secara default */
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+
+.popup-content {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 80%;
+  max-height: 90vh;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.popup-content h3 {
+  margin-top: 0;
+  font-size: 24px;
   color: #343a40;
-  font-size: 28px; /* Memperbesar font heading */
+  text-align: center;
+}
+
+.popup-content h4 {
+  font-size: 16px;
+  color: #495057;
+  margin: 10px 0;
+  text-align: left;
+}
+
+.popup-content p,
+.popup-content ul {
+  font-size: 16px;
+  color: #495057;
+  margin: 10px 0;
+  text-align: justify;
+}
+
+.popup-content ul {
+  text-align: left;
+  padding-left: 20px;
+  text-align: justify;
+}
+
+.popup-content button {
+  margin-top: 20px;
+  background-color: #119e16;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background-color: #0a770e;
+}
+
+/* Pop-up Visible */
+.popup.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #343a40;
+  font-size: 24px;
 }
 
 label {
   display: block;
-  margin-bottom: 15px; /* Menambah jarak antar label */
+  margin-bottom: 10px;
   font-weight: bold;
   color: #495057;
-  font-size: 18px; /* Memperbesar ukuran font label */
+  font-size: 16px;
 }
 
 input[type="text"],
 textarea {
   width: 100%;
-  padding: 15px; /* Memperbesar padding */
-  margin-bottom: 25px; /* Menambah jarak antar elemen */
+  padding: 12px;
+  margin-bottom: 20px;
   border: 1px solid #ced4da;
-  border-radius: 8px;
-  font-size: 16px; /* Memperbesar ukuran font */
+  border-radius: 6px;
+  font-size: 14px;
   box-sizing: border-box;
-}
-
-#prosesIterasi {
-  height: 500px; /* Menambah tinggi area proses iterasi */
-  width: 700px;
-  background-color: #e9ecef;
-  font-size: 16px; /* Memperbesar ukuran font */
-  padding: 10px;
-}
-
-#hasil {
-  height: 80px; /* Menambah tinggi area hasil */
-  width: 700px;
-  background-color: #ffffff;
-  font-size: 16px; /* Memperbesar ukuran font */
-  padding: 10px;
 }
 
 textarea {
   resize: none;
 }
 
+#prosesIterasi {
+  height: 300px;
+  background-color: #e9ecef;
+  font-size: 14px;
+}
+
+#hasil {
+  height: 80px;
+  background-color: #ffffff;
+  font-size: 14px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
 .button {
-  display: inline-block;
-  padding: 15px 30px; /* Memperbesar tombol */
-  font-size: 18px; /* Memperbesar ukuran font tombol */
+  padding: 10px 20px;
+  font-size: 16px;
   color: #ffffff;
-  background-color: #007bff;
+  background-color: #119e16;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  text-align: center;
-  margin-right: 15px;
 }
 
 .button:hover {
-  background-color: #0056b3;
+  background-color: #0a770e;
 }
 
 .button.reset {
@@ -114,5 +189,55 @@ textarea {
   .container,
   .sidebar {
     margin: 10px 0;
+  }
+
+  #prosesIterasi {
+    height: 200px;
+    font-size: 12px;
+  }
+
+  #hasil {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input[type="text"],
+  textarea {
+    font-size: 12px;
+  }
+
+  .button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* Responsive Pop-up */
+@media (max-width: 768px) {
+  .popup-content {
+    padding: 20px; /* Sesuaikan padding untuk layar kecil */
+  }
+
+  .popup-content h3 {
+    font-size: 20px; /* Perkecil ukuran heading */
+  }
+
+  .popup-content p,
+  .popup-content ul {
+    font-size: 14px; /* Perkecil ukuran font untuk teks */
+  }
+
+  .popup-content button {
+    font-size: 14px; /* Perkecil ukuran tombol */
+    padding: 8px 16px;
   }
 }

@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Metode Tabel</title>
-    <link rel="stylesheet" href="/web/styles.css" />
+    <title>Kalkulator Metode Tabel</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="https://img.icons8.com/?size=100&id=Eb_WjSQOlQGi&format=png&color=000000" type="image/x-icon">
   </head>
   <body>
     <div class="wrapper">
       <div class="container">
-        <h2>Metode Tabel</h2>
+        <h2>Kalkulator Metode Tabel</h2>
         <form id="numericalForm">
           <label for="fungsi">Masukkan Fungsi</label>
           <input
@@ -60,7 +61,52 @@
         <textarea id="hasil" name="hasil" readonly></textarea>
       </div>
     </div>
-    <script src="/web/script.js"></script>
+    <div class="popup" id="popupInformasi">
+      <div class="popup-content">
+        <h3>Informasi Umum</h3>
+        <p>
+          Kalkulator Metode Tabel digunakan untuk mencari solusi dari persamaan
+          non-linear menggunakan metode pembagian interval. Masukkan fungsi,
+          batas atas, batas bawah, dan jumlah pembagian untuk mendapatkan hasil
+          yang mendekati akar dari fungsi.
+        </p>
+        <ul>
+          <li>
+            Fungsi harus ditulis dengan format yang valid, misalnya:
+            <code>x^3 - 4*x + 1</code>.
+          </li>
+          <li>Batas atas harus lebih besar dari batas bawah.</li>
+          <li>
+            Jumlah pembagian menentukan seberapa detail perhitungan dilakukan.
+          </li>
+        </ul>
+        <br />
+        <h4>Format Penulisan Operasi Matematika</h4>
+        <ul>
+          <li>Penjumlahan, contoh : <code>2 + 3 = 5</code></li>
+          <li>Pengurangan, contoh : <code>5 - 3 = 2</code></li>
+          <li>Perkalian, contoh : <code>2 * 3 = 6</code></li>
+          <li>Pembagian, contoh : <code>6 / 3 = 2</code></li>
+          <li>Pangkat, contoh : <code>2^3 = 8</code></li>
+          <li>Sisa Pembagian, contoh : <code>7 % 3 = 1</code></li>
+          <li>Akar Kuadrat, contoh : <code>sqrt(9) = 3</code></li>
+          <li>Eksponensial, contoh : <code>e^1</code> atau <code>exp(1)</code></li>
+        </ul>
+        <br />
+        <h4>
+          Kelompok 1 Teknik Informatika Semester 3 Pagi
+        </h4>
+        <ul>
+          <li>Achmat Rahmadi (143223002)</li>
+          <li>Achmad Rif’an (143223003)</li>
+          <li>Naila Mufidah Aulia’ (143223005)</li>
+        </ul>
+
+        <button class="button" id="closePopup">Next</button>
+      </div>
+    </div>    
+
+    <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
   </body>
 </html>

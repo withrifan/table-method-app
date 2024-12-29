@@ -1,3 +1,17 @@
+// Menampilkan Pop-up saat Halaman Dimuat
+window.onload = function () {
+    const popup = document.getElementById("popupInformasi");
+    const closePopupButton = document.getElementById("closePopup");
+  
+    // Tampilkan pop-up
+    popup.classList.add("show");
+  
+    // Tutup pop-up saat tombol "Tutup" diklik
+    closePopupButton.addEventListener("click", function () {
+      popup.classList.remove("show");
+    });
+  };
+
 function prosesMetodeTabel() {
     try {
         // Ambil nilai input dari pengguna
