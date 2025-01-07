@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar Metode Tabel</title>
+    <link rel="stylesheet" href="/page/styles.css" />
+    <link
+      rel="shortcut icon"
+      href="https://img.icons8.com/?size=100&id=Eb_WjSQOlQGi&format=png&color=000000"
+      type="image/x-icon"
+    />
+  </head>
+  <header>
+    <div class="header-container">
+      <a href="/index.html" class="header-title">Kalkulator Metode Tabel</a>
+      <button class="burger-menu" aria-label="Toggle menu">☰</button>
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <a href="/page/metode-numerik.html">Mengenal Metode Numerik</a>
+          </li>
+          <li><a href="/page/metode-tabel.html">Belajar Metode Tabel</a></li>
+          <li><a href="/page/info.html">Informasi Penggunaan</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <body>
+    <h2>Apa itu Metode Tabel?</h2>
+    <div class="info-content">
+      <h3>Informasi Umum</h3>
+      <p>
+        Penyelesaian persamaan non-linier menggunakan metode tabel dilakukan
+        dengan membagi persamaan menjadi beberapa area, dimana untuk
+        <code>x=[a,b]</code> dibagi sebanyak <code>N</code> bagian dan pada
+        masing-masing bagian dihitung nilai <code>f(x)</code> sehingga diperoleh
+        nilai <code>f(x)</code> pada setiap <code>N</code> bagian.
+      </p>
+      <p>
+        Bila nilai <code>f(x<sub>k</sub>)=0</code> atau mendekati nol, dimana
+        <code>a ≤ k ≤ b</code>, maka dikatakan bahwa <code>x<sub>k</sub></code> adalah
+        penyelesaian persamaan <code>f(x)</code>. Bila tidak ditemukan, dicari
+        nilai <code>f(x<sub>k</sub>)</code> dan <code>f(x<sub>k+1</sub>)</code> yang berlawanan
+        tanda. Bila tidak ditemukan, maka persamaan tersebut dapat dikatakan
+        tidak mempunyai akar untuk rentang <code>[a,b]</code>.
+      </p>
+      <p>
+        Bila akar persamaan tidak ditemukan, maka ada dua kemungkinan untuk
+        menentukan akar persamaan, yaitu:
+      </p>
+      <ol>
+        <li>
+          Akar persamaan ditentukan oleh nilai mana yang lebih dekat. Bila
+          <code>f(x<sub>k</sub>) ≤ f(x<sub>k+1</sub>)</code>, maka akarnya <code>x<sub>k</sub></code>. Bila
+          <code>f(x<sub>k+1</sub>) ≤ f(x<sub>k</sub>)</code>, maka akarnya <code>x<sub>k+1</sub></code>.
+        </li>
+        <li>
+          Perlu dicari lagi menggunakan rentang <code>x=[x<sub>k</sub>, x<sub>k+1</sub>]</code>.
+        </li>
+      </ol>
+      <h3>Algoritma Metode Tabel</h3>
+      <p>Berikut algoritmanya:</p>
+      <ul>
+        <li>Definisikan fungsi <code>f(x)</code></li>
+        <li>
+          Tentukan rentang untuk <code>x</code> yang berupa batas bawah
+          <code>a</code> dan batas atas <code>b</code>.
+        </li>
+        <li>Tentukan jumlah pembagi <code>N</code></li>
+        <li>
+          Hitung step pembagi
+          <pre><code>h = (b + a) / N</code></pre>
+        </li>
+        <li>
+          Untuk <code>i = 0</code> s/d <code>N</code>, hitung:
+          <pre><code>x<sub>i</sub> = a + i * h</code></pre>
+          <pre><code>y<sub>i</sub> = f(x<sub>i</sub>)</code></pre>
+        </li>
+        <li>
+          Untuk <code>i = 0</code> s/d <code>N</code>, dimana
+          <ul>
+            <li>Bila <code>f(x) = 0</code>, maka akarnya <code>x<sub>k</sub></code></li>
+            <li>
+              Bila <code>f(a) * f(b) < 0</code>, maka:
+              <ul>
+                <li>
+                  Bila <code>f(x<sub>k</sub>) ≤ f(x<sub>k+1</sub>)</code>, maka akarnya
+                  <code>x<sub>k</sub></code>
+                </li>
+                <li>
+                  Bila tidak, <code>x<sub>k+1</sub></code> adalah penyelesaian atau
+                  dapat dikatakan penyelesaian berada diantara
+                  <code>x<sub>k</sub></code> dan <code>x<sub>k+1</sub></code>.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p>Referensi : <a href="https://bookdown.org/moh_rosidi2610/Metode_Numerik/rootfinding.html" target="_blank">https://bookdown.org/moh_rosidi2610/Metode_Numerik/rootfinding.html</a></p>
+    </div>
+    <script src="/page/script.js"></script>
+  </body>
+</html>
