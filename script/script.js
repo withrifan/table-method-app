@@ -1,16 +1,19 @@
 // Menampilkan Pop-up saat Halaman Dimuat
-window.onload = function () {
-  const popup = document.getElementById("popupInformasi");
-  const closePopupButton = document.getElementById("closePopup");
+window.onload = function () { 
+  // Fungsi akan dijalankan setelah semua elemen halaman selesai dimuat
+  const popup = document.getElementById("popupInformasi"); // Ambil elemen pop-up berdasarkan ID 'popupInformasi'
+  const closePopupButton = document.getElementById("closePopup"); // Ambil tombol "Tutup" berdasarkan ID 'closePopup'
 
   // Tampilkan pop-up
-  popup.classList.add("show");
+  popup.classList.add("show"); // Tambahkan class 'show' untuk membuat pop-up terlihat
 
   // Tutup pop-up saat tombol "Tutup" diklik
-  closePopupButton.addEventListener("click", function () {
-    popup.classList.remove("show");
+  closePopupButton.addEventListener("click", function () { 
+      // Tambahkan event listener untuk mendeteksi klik pada tombol "Tutup"
+      popup.classList.remove("show"); // Hapus class 'show' agar pop-up tersembunyi
   });
 };
+
 
 // Burger Menu
 document.addEventListener("DOMContentLoaded", function () {
